@@ -49,3 +49,22 @@ document.querySelector(".menu-list").addEventListener("click", function (e) {
 		document.querySelector(id).scrollIntoView({ behavior: "smooth" });
 	}
 });
+
+// Email address validation
+function ValidateEmail(inputText) {
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if (inputText.value.match(mailformat)) {
+		return true;
+	} else {
+		alert("Please enter a valid email address!");
+		document.palmaForm.email.focus();
+		document.palmaForm.email.style.border = "red";
+		return false;
+	}
+}
+
+// Clean form fields after submission
+const form = document.getElementsByName("palmaForm");
+form.addEventListener("submit", function handleSubmit() {
+	form.reset();
+});
