@@ -1,9 +1,23 @@
+// hamburger menu
 const menuToggle = document.querySelector(".menu-toggle input");
 const nav = document.querySelector("nav ul");
 
 menuToggle.addEventListener("click", function () {
 	nav.classList.toggle("slide");
 });
+
+const navLinks = document.querySelectorAll(".menu__link");
+const navSlide = document.getElementsByClassName("nav ul slide");
+const checkbox = document.getElementById("checkbox");
+console.log(navLinks);
+for (let i = 0; i < navLinks.length; i++) {
+	navLinks[i].addEventListener("click", function () {
+		if (nav.classList.contains("slide")) {
+			nav.classList.remove("slide");
+			checkbox.checked = false;
+		}
+	});
+}
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -41,8 +55,6 @@ function showSlides(n) {
 // Navigation
 document.querySelector(".menu-list").addEventListener("click", function (e) {
 	e.preventDefault();
-	console.log(e.target);
-	console.log(e.currentTarget);
 
 	if (e.target.classList.contains("menu__link")) {
 		const id = e.target.getAttribute("href");
@@ -62,9 +74,3 @@ function ValidateEmail(inputText) {
 		return false;
 	}
 }
-
-// Clean form fields after submission
-const form = document.getElementsByName("palmaForm");
-form.addEventListener("submit", function handleSubmit() {
-	form.reset();
-});

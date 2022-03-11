@@ -38,7 +38,7 @@ body {
 .hero {
 	color: white;
 	grid-area: hero;
-	min-height: 350px;
+	min-height: 450px;
 	background-image: url("img/hero/hero.jpg");
 	background-size: cover;
 	background-position: center;
