@@ -19,6 +19,25 @@ for (let i = 0; i < navLinks.length; i++) {
 	});
 }
 
+// price guide accordion
+const acc_btns = document.querySelectorAll(".accordion-header");
+const acc_contents = document.querySelectorAll(".accordion-body");
+acc_btns.forEach((btn) => {
+	btn.addEventListener("click", (e) => {
+		acc_contents.forEach((acc) => {
+			if (e.target.nextElementSibling !== acc && acc.classList.contains("active")) {
+				acc.classList.remove("active");
+				acc_btns.forEach((btn) => btn.classList.remove("active"));
+			}
+		});
+
+		const panel = btn.nextElementSibling;
+		panel.classList.toggle("active");
+		btn.classList.toggle("active");
+	});
+});
+
+// gallery
 var slideIndex = 1;
 showSlides(slideIndex);
 

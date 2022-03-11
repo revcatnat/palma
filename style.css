@@ -225,6 +225,50 @@ body {
 	text-align: left;
 }
 
+/* Accordion */
+.accordion {
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 0.5rem;
+}
+
+.accordion-header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.75rem 1rem;
+	width: 100%;
+	background-color: rgb(233, 233, 233);
+	border: none;
+	outline: none;
+	border-bottom: 1px solid rgb(197, 197, 197);
+	color: rgb(32, 32, 32);
+	cursor: pointer;
+	text-align: left;
+}
+
+.accordion-body {
+	padding: 0 1rem;
+	background-color: #f3f3f3;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.accordion-body.active {
+	max-height: fit-content;
+	padding: 1rem;
+}
+
+.accordion-header.active {
+	background-color: rgb(206, 206, 206);
+}
+
+.accordion-header.active i {
+	transform: rotate(180deg);
+	transition: all 0.3s ease-in-out;
+}
+
 /* Gallery */
 
 .gallery > * {
