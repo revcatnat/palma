@@ -93,3 +93,9 @@ function ValidateEmail(inputText) {
 		return false;
 	}
 }
+
+// Clear message box on load
+window.addEventListener("load", () => {
+	const msgBox = document.querySelector("#message");
+	msgBox.value = "";
+});
